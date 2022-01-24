@@ -1,0 +1,16 @@
+
+
+Sort out card box shadow
+
+Sort out border colors for different cards (diff CSS classes?)
+
+Place individual cards vertically in pixel perfect fashion
+
+Font colors
+
+Add background to mobile
+
+Inspect one to make sure everything looks pixel perfect, 100% complete and
+accurate to design
+
+Finish off mobile and move to desktop

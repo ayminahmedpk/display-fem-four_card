@@ -1,0 +1,44 @@
+
+
+Figma and letter spacing:
+
+    Figma can have letter-spacing as % values,
+    and the % is calculated based on the font-size.
+
+    However, in the browser (at least in Chrome), % values are invalid.
+    Use em instead.
+
+    So 0.05% in Figma becomes 0.005em in CSS.
+
+
+
+Vertically centering using margin auto (issues):
+
+    "In fact, the nature of document flow and element height calculation
+     algorithms make it impossible to use margins for centering an element
+     vertically inside its parent. Whenever a vertical margin's value is
+     changed, it will trigger a parent element height re-calculation (re-flow),
+     which would in turn trigger a re-center of the original element... making
+     it an infinite loop."
+
+    Basically, can't use margin-top: auto to vertically center an element. We
+    are recommended by stackoverlow to use flexbox or positioning instead.
+    
+    Simply changing the parent container to "display : flex;" will magically
+    make it apply margin-top: auto; or margin-bot: auto; the way you expect it
+    to.
+
+
+Border size and internal spacing:
+
+    Yes, border-box makes it such that the border is added to the inside of the
+    box, without increasing its total height.
+
+    However, the border is a separate entity from the box's inner content (even
+    its padding), so it will push everything inside the box further back.
+
+    So a border top of 4px will push everything in the box lower by 4px,
+    effectively increasing the top padding by 4px.
+
+    Keep that in mind when setting a container's padding and inner content's
+    margin-top.
