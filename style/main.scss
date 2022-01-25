@@ -2,19 +2,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
 
+$Red    : hsl(0,   78%, 62%) ;
+$Cyan   : hsl(180, 62%, 55%) ;
+$Orange : hsl(34,  97%, 64%) ;
+$Blue   : hsl(212, 86%, 64%) ;
+
+$Very-Dark-Blue  : hsl(234, 12%, 34%) ;
+$Grayish-Blue    : hsl(229, 6%,  66%) ;
+$Very-Light-Gray : hsl(  0, 0%,  98%) ;
+
+
 * {
-    margin      : 0                     ;
-    padding     : 0                     ;
-    box-sizing  : border-box            ;
+    margin     : 0          ;
+    padding    : 0          ;
+    box-sizing : border-box ;
     
     font-family : 'Poppins', sans-serif ;
     line-height : 1.5                   ;
 }
 
-$Red    : hsl(0,   78%, 62%) ;
-$Cyan   : hsl(180, 62%, 55%) ;
-$Orange : hsl(34,  97%, 64%) ;
-$Blue   : hsl(212, 86%, 64%) ;
+
+html { background-color: $Very-Light-Gray; }
 
 
 .content-container { padding: 32px; }
@@ -27,16 +35,15 @@ $Blue   : hsl(212, 86%, 64%) ;
 
 
 .banner__text-extralight {
-    padding        : 0 4px 0 2px ;
+    padding : 0 4px 0 2px ;
 
-    font-weight    : 200           ;
-    font-size      : 24px          ;
-    letter-spacing : 0.005em       ;  // 0.05%
+    font-weight    : 200     ;
+    font-size      : 24px    ;
+    letter-spacing : 0.005em ;  // 0.05%
 }
 
 
 .banner__text-semibold {
-
     font-weight    : 600     ;
     font-size      : 24px    ;
     letter-spacing : 0.005em ;
@@ -45,30 +52,44 @@ $Blue   : hsl(212, 86%, 64%) ;
 
 .banner__text-regular {
     margin-top : 16px;
-
-    font-weight       : 400     ;
-    font-size         : 15px    ;
-    letter-spacing    : 0.005em ;
-    line-height : 25px    ; // directly didn't work
+    
+    color          : $Grayish-Blue ;
+    font-weight    : 400           ;
+    font-size      : 15px          ;
+    letter-spacing : 0.005em       ;
+    line-height    : 25px          ;  // directly didn't work
 }
 
 
 .card-container {
-    margin-top: 75px;
+    margin-top    : 75px;
+    margin-bottom : 78px;
+
+    &__col-2,
+    &__col-3 {
+        margin-top: 24px;
+    }
 }
 
 
-
-
 .card {
+    display        : flex   ;  // to enable margin-top:auto; in child
+    flex-direction : column ;  // to avoid breaking things
     
-    display        : flex            ;  // to enable margin-top:auto; in child
-    flex-direction : column          ;  // to avoid breaking things
-    
-    height         : 222px           ;
-    padding        : 24px 28px 28px  ;
-    border-radius  : 5px             ;
-    border-top     : 4px solid $Cyan ;
+    height        : 222px           ;
+    padding       : 24px 28px 28px  ;
+    border-radius : 5px             ;
+    border-top    : 4px solid $Cyan ;
+
+    background-color : white                              ;
+    box-shadow       :  2px 7px 10px 1px rgba(0,0,0,0.05) ,
+                       -1px 0px 10px 1px rgba(0,0,0,0.05) ;
+
+    & + & { margin-top: 24px; }
+
+    &.card__teambuilder { border-top : 4px solid $Red    ; }
+    &.card__karma       { border-top : 4px solid $Orange ; }
+    &.card__calculator  { border-top : 4px solid $Blue   ; }
 }
 
 
@@ -76,27 +97,33 @@ $Blue   : hsl(212, 86%, 64%) ;
     font-weight    : 600       ;
     font-size      : 20px      ;
     line-height    : 25px      ;
-    letter-spacing : -0.0075em ;   
+    letter-spacing : -0.0075em ;
 }
 
 
 .card__text {
-    margin         : 6px 1px 0 ;
-    font-weight    : 400;
-    font-size      : 13px;
-    line-height    : 23px;
-    letter-spacing : 0.005em;
+    margin : 6px 1px 0 ;
+
+    color          : $Grayish-Blue ;
+    font-weight    : 400           ;
+    font-size      : 13px          ;
+    line-height    : 23px          ;
+    letter-spacing : 0.005em       ;
 }
 
 
 .card__logo {
-    margin-left      : auto  ;
-    margin-top       : auto  ;
-    margin-bottom    : 0     ;
-    width            : 57px  ;
-    height           : 57px  ;
+    margin-left : auto  ;
+    margin-top  : auto  ;
+    width       : 57px  ;
+    height      : 57px  ;
+
     & img {
         width  : 100% ;
         height : 100% ;
     }
+}
+
+@media screen and (min-width: 400px) {
+    @import './desktop';
 }

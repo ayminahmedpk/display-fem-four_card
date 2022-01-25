@@ -42,3 +42,58 @@ Border size and internal spacing:
 
     Keep that in mind when setting a container's padding and inner content's
     margin-top.
+
+
+Box shadow:
+
+    Properties:
+        inset              : (whether the shadow is cast by the box, or on it)
+        x-offset, y-offest : the x / y position of the shadow box (can be -ve)
+        blur               : distance of blur from edges of shadow box
+        spread             : size (increased or decreased) of shadow box
+        color              : typical color field, can use rgba for opacity too
+
+    Note:
+        Can have multiple shadows by
+            box-shadow: ....... ,
+                        ....... ,
+                        ....... ;
+        Multiple box-shadow properties will have the latest one override the
+        earlier one, as CSS is supposed to do. So for multiple shadows, just
+        use the above comma separated method.
+
+    Trick - multiple borders:
+        Shadows do not affect the box model, so we can give a box multiple
+        "borders" by giving it multile Shadows (shadow boxes) of higher spread
+        and no blur- without affecting other elements. Just watchout for
+        overlapping content, whether outside or inside if using inset.
+
+
+Figma -> Development:
+    
+    Go SECTION BY SECTION.
+
+    Don't get ahead of yourself to tackle the trickier parts first.
+    
+    The hacks needed for positioning and container dimensions, etc. just to lay
+    the targeted content on the image are NOT worth it. That alone takes hours,
+    and complicates your code to the point where you don't know what is for
+    the design and what is for the temporary alignment.
+
+    Skip this nonsense. Go section by section.
+
+    UNLESS, unless you are willing to unlock the image layer in Pixel Perfect
+    and then work accordingly.
+
+    But it's best to just avoid this step altogether and go section by section.
+
+    Any markup changes later will usually have a localized effect, without
+    affecting the content in the prior sections.
+
+    And when that change affects the previously perfected layouts, you can then
+    harden those layouts on an incremental basis.
+
+    This is just the normal process. This is how your code gradually grows to
+    its final version. Don't try to shortcut it.
+
+    Go section by section.
