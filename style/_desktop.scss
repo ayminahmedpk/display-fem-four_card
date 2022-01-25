@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     
-    margin: 62px 0 0 0;
+    margin: 64px 0 0 0;
     
     &__col-2,
     &__col-3 {
@@ -42,12 +42,12 @@
     width  : 350px;
     height : 250px;
     margin : 0;
-    padding: 32px;
+    padding: 30px 32px 32px;
 }
 
 
 .card__text {
-    margin-top: 11px;
+    margin-top: 10px;
 }
 
 .card__logo {

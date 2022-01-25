@@ -82,9 +82,8 @@ html { background-color: $Very-Light-Gray; }
     border-radius : 5px             ;
     border-top    : 4px solid $Cyan ;
 
-    background-color : white                              ;
-    box-shadow       :  2px 7px 10px 1px rgba(0,0,0,0.05) ,
-                       -1px 0px 10px 1px rgba(0,0,0,0.05) ;
+    background-color : white                                   ;
+    box-shadow       :  1px 15px 20px 0px rgba(100,100,150,0.1);
 
     & + & { margin-top: 24px; }
 
