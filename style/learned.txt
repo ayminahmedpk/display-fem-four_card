@@ -69,6 +69,23 @@ Box shadow:
         overlapping content, whether outside or inside if using inset.
 
 
+Grid:
+
+    Much flatter markup than flexbox.
+
+    So much cleaner and more intuitive in the CSS. Layout immediately clear,
+    particularly with grid-template-areas fro the desktop version.
+
+    Also, with auto-fit, managed to have a decent laptop layout without adding
+    an extra stylesheet or breakpoint.
+
+    Note: When working with grid, it is better to leave the grid items' width
+    as the default (which is probably 100%), and instead focus on the grid
+    columns' width. This will make things a lot simpler. Perhaps, when working
+    cross-axis, this type of deferment of control can be used on the height
+    instead?
+
+
 Figma -> Development:
     
     Go SECTION BY SECTION.
