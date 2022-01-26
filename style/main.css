@@ -13,13 +13,13 @@ html {
 }
 
 .content-container {
-  padding: 32px;
+  padding: 84px 32px 78px;
   min-width: 375px;
 }
 
+/* -------------------------------- <banner> -------------------------------- */
 .banner {
   max-width: 420px;
-  margin-top: 52px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -47,19 +47,20 @@ html {
   line-height: 25px;
 }
 
+/* ------------------------------- <banner /> ------------------------------- */
 .card-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
+  -ms-grid-columns: (minmax(250px, 350px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
   grid-gap: 24px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 75px;
-  margin-bottom: 78px;
 }
 
+/* --------------------------------- <card> --------------------------------- */
 .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -69,7 +70,6 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 222px;
-  max-width: 320px;
   padding: 24px 28px 28px;
   border-radius: 5px;
   background-color: white;
@@ -121,22 +121,12 @@ html {
   height: 100%;
 }
 
-@media screen and (min-width: 710px) {
-  .card-container {
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
-  }
-  .card {
-    max-width: 350px;
-    height: 250px;
-    padding: 30px 32px 32px;
-  }
-}
-
-@media screen and (min-width: 1110px) {
+/* -------------------------------- <card /> -------------------------------- */
+@media screen and (min-width: 1120px) {
   .content-container {
     padding: 80px;
   }
+  /* -------------------------------- <banner> -------------------------------- */
   .banner {
     margin: 2px auto 0px;
     max-width: 540px;
@@ -146,9 +136,18 @@ html {
     font-size: 36px;
     line-height: 50px;
   }
+  /* ------------------------------- <banner /> ------------------------------- */
+  .card-container {
+    grid-gap: 30px;
+    -ms-grid-columns: (minmax(300px, 350px))[3];
+        grid-template-columns: repeat(3, minmax(300px, 350px));
+        grid-template-areas: ". t ." "s t c" "s k c" ". k .";
+    margin-top: 64px;
+  }
+  /* --------------------------------- <card> --------------------------------- */
   .card-supervisor {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
     -ms-grid-column: 1;
     grid-area: s;
   }
@@ -165,24 +164,14 @@ html {
     grid-area: k;
   }
   .card-calculator {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
     -ms-grid-column: 3;
     grid-area: c;
   }
-  .card-container {
-    grid-gap: 30px;
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-        grid-template-areas: "s t c" "s t c" "s k c" "s k c";
-    margin-top: 64px;
-  }
   .card {
-    width: 350px;
     height: 250px;
+    padding: 30px 32px 32px;
   }
   .card__text {
     margin-top: 10px;
@@ -191,5 +180,6 @@ html {
     width: 64px;
     height: 64px;
   }
+  /* -------------------------------- <card /> -------------------------------- */
 }
 /*# sourceMappingURL=main.css.map */

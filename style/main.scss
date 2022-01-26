@@ -27,16 +27,17 @@ html { background-color: $Very-Light-Gray; }
 
 
 .content-container {
-    padding: 32px;
-    min-width: 375px;
+    padding   : 84px 32px 78px;
+    min-width : 375px ;
 }
 
 
+
+/* -------------------------------- <banner> -------------------------------- */
 .banner {
-    max-width: 420px;
-    margin-top : 52px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width    : 420px ;
+    margin-left  : auto  ;
+    margin-right : auto  ;
 
     text-align : center;
 }
@@ -67,35 +68,34 @@ html { background-color: $Very-Light-Gray; }
     letter-spacing : 0.005em       ;
     line-height    : 25px          ;  // directly didn't work
 }
+/* ------------------------------- <banner /> ------------------------------- */
+
 
 
 .card-container {
     display               : grid ;
-    grid-template-columns : auto ;
+    grid-template-columns : repeat(auto-fit, minmax(250px, 350px) ) ;
     grid-gap              : 24px ;
     justify-content       : center;
 
     margin-top    : 75px;
-    margin-bottom : 78px;
 }
 
 
-.card {
-    display        : flex   ;  // to enable margin-top:auto; in child
-    flex-direction : column ;  // to avoid breaking things
-    
 
+/* --------------------------------- <card> --------------------------------- */
+.card {
+    display        : flex   ;  // to enable margin-top:auto; in children
+    flex-direction : column ;  // to avoid breaking things
+
+    // Card doesn't need width - we are setting it with grid column width
     height        : 222px           ;
-    max-width     : 320px           ;
     padding       : 24px 28px 28px  ;
     border-radius : 5px             ;
 
     background-color : white                                   ;
     box-shadow       :  1px 15px 20px 0px rgba(100,100,150,0.1);
-
-    
 }
-
 .card-supervisor  { border-top : 4px solid $Cyan   ; }
 .card-teambuilder { border-top : 4px solid $Red    ; }
 .card-karma       { border-top : 4px solid $Orange ; }
@@ -132,7 +132,8 @@ html { background-color: $Very-Light-Gray; }
         height : 100% ;
     }
 }
+/* -------------------------------- <card /> -------------------------------- */
 
 
-@media screen and (min-width:  710px) { @import './laptop'; }
-@media screen and (min-width: 1110px) { @import './desktop'; }
+
+@media screen and (min-width: 1120px) { @import './desktop'; }

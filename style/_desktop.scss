@@ -2,6 +2,9 @@
 
 .content-container { padding: 80px; }
 
+
+
+/* -------------------------------- <banner> -------------------------------- */
 .banner {
     margin: 2px auto 0px;
     max-width: 540px;
@@ -13,39 +16,43 @@
     font-size   : 36px;
     line-height : 50px;
 }
+/* ------------------------------- <banner /> ------------------------------- */
 
 
+
+.card-container {
+    grid-gap: 30px;
+    grid-template-columns : repeat(3, minmax(300px, 350px));
+    grid-template-areas :
+        ". t ."
+        "s t c"
+        "s k c"
+        ". k .";
+    
+    margin-top: 64px;
+}
+
+
+
+/* --------------------------------- <card> --------------------------------- */
 .card-supervisor  { grid-area : s ; }
 .card-teambuilder { grid-area : t ; }
 .card-karma       { grid-area : k ; }
 .card-calculator  { grid-area : c ; }
 
 
-.card-container {
-    grid-gap: 30px;
-    grid-template-columns : auto auto auto;
-    align-items: center;
-    grid-template-areas :
-        "s t c"
-        "s t c"
-        "s k c"
-        "s k c";
-    
-    margin-top: 64px;
-}
-
-
 .card {
-    width  : 350px;
-    height : 250px;
+    // Again, no width. Handled by grid column's width.
+    height  : 250px          ;
+    padding : 30px 32px 32px ;
 }
 
 
-.card__text {
-    margin-top: 10px;
-}
+.card__text { margin-top: 10px; }
+
 
 .card__logo {
     width  : 64px;
     height : 64px;
 }
+/* -------------------------------- <card /> -------------------------------- */
