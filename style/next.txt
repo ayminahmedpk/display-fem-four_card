@@ -1,16 +1,26 @@
 
 
-Sort out card box shadow
+Change layout type to grid - get rid of flex rows, use grid template areas
+instead. Flatten markup. Grid gap for desktop.
 
-Sort out border colors for different cards (diff CSS classes?)
+Consider
 
-Place individual cards vertically in pixel perfect fashion
+    a b d
+    a b d
+    a c d
+    a c d
 
-Font colors
+    for desktop grid, with top/bottom margins to auto to center a/d if possible.
 
-Add background to mobile
+Replace card top border with inset box-shadow.
 
-Inspect one to make sure everything looks pixel perfect, 100% complete and
-accurate to design
+Place individual cards vertically in pixel perfect fashion for the mobile
+version - INDIVIDUALLY with note as to why
 
-Finish off mobile and move to desktop
+Make sure mobile and desktop versions are pixel perfect when hardcoded
+
+<->
+
+Add laptop version
+
+Consider breakpoint (more explicit) vs grid auto-fill vs grid auto-fit.

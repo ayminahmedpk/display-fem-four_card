@@ -14,10 +14,14 @@ html {
 
 .content-container {
   padding: 32px;
+  min-width: 375px;
 }
 
 .banner {
+  max-width: 420px;
   margin-top: 52px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
@@ -44,12 +48,16 @@ html {
 }
 
 .card-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-gap: 24px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 75px;
   margin-bottom: 78px;
-}
-
-.card-container__col-2, .card-container__col-3 {
-  margin-top: 24px;
 }
 
 .card {
@@ -61,27 +69,27 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 222px;
+  max-width: 320px;
   padding: 24px 28px 28px;
   border-radius: 5px;
-  border-top: 4px solid #45d3d3;
   background-color: white;
   -webkit-box-shadow: 1px 15px 20px 0px rgba(100, 100, 150, 0.1);
           box-shadow: 1px 15px 20px 0px rgba(100, 100, 150, 0.1);
 }
 
-.card + .card {
-  margin-top: 24px;
+.card-supervisor {
+  border-top: 4px solid #45d3d3;
 }
 
-.card.card__teambuilder {
+.card-teambuilder {
   border-top: 4px solid #ea5353;
 }
 
-.card.card__karma {
+.card-karma {
   border-top: 4px solid #fcaf4a;
 }
 
-.card.card__calculator {
+.card-calculator {
   border-top: 4px solid #549ef2;
 }
 
@@ -113,6 +121,18 @@ html {
   height: 100%;
 }
 
+@media screen and (min-width: 710px) {
+  .card-container {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+  .card {
+    max-width: 350px;
+    height: 250px;
+    padding: 30px 32px 32px;
+  }
+}
+
 @media screen and (min-width: 1110px) {
   .content-container {
     padding: 80px;
@@ -126,41 +146,43 @@ html {
     font-size: 36px;
     line-height: 50px;
   }
+  .card-supervisor {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 1;
+    grid-area: s;
+  }
+  .card-teambuilder {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: t;
+  }
+  .card-karma {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: k;
+  }
+  .card-calculator {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 3;
+    grid-area: c;
+  }
   .card-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin: 64px 0 0 0;
-  }
-  .card-container__col-2, .card-container__col-3 {
-    margin: 0;
-  }
-  .card-container__col {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .card-container__col + .card-container__col {
-    margin-left: 30px;
-  }
-  .card-container__col .card + .card {
-    margin-top: 30px;
+    grid-gap: 30px;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+        grid-template-areas: "s t c" "s t c" "s k c" "s k c";
+    margin-top: 64px;
   }
   .card {
     width: 350px;
     height: 250px;
-    margin: 0;
-    padding: 30px 32px 32px;
   }
   .card__text {
     margin-top: 10px;
